@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <title>Winter Music Festival</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <style>
+        html {
+            scroll-behavior: smooth;
+        }
+        body {
+            background: linear-gradient(135deg, #e6f2ff 0%, #b0e0e6 100%);
+            font-family: 'Arial', sans-serif;
+        }
+        .snowflake {
+            position: fixed;
+            background: white;
+            width: 6px;
+            height: 6px;
+            border-radius: 50%;
+            pointer-events: none;
+            z-index: 1;
+            animation: fall linear infinite;
+            opacity: 0.7;
+        }
+        @keyframes fall {
+            0% { transform: translateY(-10vh) rotate(0deg); }
+            100% { transform: translateY(100vh) rotate(360deg); }
+        }
+        .slideshow-container {
+            position: relative;
+            margin: auto;
+        }
+        .kontener {
+         margin: 100px 0 0 200px;
+        width: 70%;
+        height: 450px;
+        display: flex;
+        justify-content: center;
+        gap: 10px;
+        }   
+        .kontener img {
+        width: 10%;
+        height: 100%;
+        object-fit: cover;
+        border-radius: cover;
+        border: 2px solid rgba(255, 255, 255, 0.684);
+        transition: all ease-in-out 0.5s;
+        }
+        .kontener img:hover {
+        width: 25%;
+        }
+        /* The dots/bullets/indicators */
+.dot {
+  height: 15px;
+  width: 15px;
+  margin: 0 2px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+}
+.active {
+  background-color: #717171;
+}
+/* Fading animation */
+.fade {
+  animation-name: fade;
+  animation-duration: 2s;
+}
+@keyframes fade {
+  from {opacity: .4} 
+  to {opacity: 1}
+}
+        .nav-link {
+            transition: all 0.3s ease;
+        }
+        .nav-link:hover {
+            transform: scale(1.1);
+            color: #3b82f6;
+        }
+    </style>
+</head>
+<body class="relative">
+    <!-- Navigasi -->
+    <nav class="fixed top-0 left-0 w-full bg-white/80 backdrop-blur-md z-50 shadow-md">
+        <div class="container mx-auto flex justify-between items-center p-4">
+            <div class="text-2xl font-bold text-blue-900">
+                ❄️ Winter Music Fest
+            </div>
+            <div class="space-x-6">
+                <a href="#home" class="nav-link text-blue-800 hover:text-blue-600">Home</a>
+                <a href="#ticket" class="nav-link text-blue-800 hover:text-blue-600">Ticket</a>
+                <a href="#lineup" class="nav-link text-blue-800 hover:text-blue-600">Lineup</a>
+                <a href="#rundown" class="nav-link text-blue-800 hover:text-blue-600">Rundown</a>
+                <a href="#location" class="nav-link text-blue-800 hover:text-blue-600">Location</a>
+                <a href="#about" class="nav-link text-blue-800 hover:text-blue-600">About</a>
+                <a href="#gallery" class="nav-link text-blue-800 hover:text-blue-600">Gallery</a>
+            </div>
+        </div>
+    </nav>
+    <!-- Home Section -->
+    <section id="home">
+        
+<div class="slideshow-container">
+    <div class="mySlides fade">
+      <img src="1.png" style="width:100%">
+    </div>
+    
+    <div class="mySlides fade">
+      <img src="2.png" style="width:100%">
+    </div>
+    
+    <div class="mySlides fade">
+      <img src="3.png" style="width:100%">
+    </div>
+
+    <div class="mySlides fade">
+        <img src="4.png" style="width:100%">
+      </div>
+    
+<div style="text-align:center">
+    <span class="dot"></span> 
+    <span class="dot"></span> 
+    <span class="dot"></span>
+    <span class="dot"></span> 
+  </div>
+            <br>
+            <a href="#ticket" class="bg-blue-600 text-white px-8 py-4 rounded-full text-xl hover:bg-blue-700 transition-colors">
+                Beli Tiket Sekarang
+            </a>
+
+        </div>
+    </section>
+
+    &nbsp;
+    <!-- Ticket Section -->
+    <section id="ticket" class="py-20 bg-white/50">
+        <div class="container mx-auto">
+            <h2 class="text-4xl text-center font-bold text-blue-900 mb-12">Pilih Tiket Anda</h2>
+            <div id="daftar-konser" class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <!-- Konser akan dimuat secara dinamis melalui JavaScript -->
+            </div>
+        </div>
+    </section>
+    <!-- Lineup Section -->
+    <section id="lineup" class="py-20">
+        <div class="container mx-auto">
+            <h2 class="text-4xl text-center font-bold text-blue-900 mb-12">Artist Lineup</h2>
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-6">
+                <div class="bg-white p-6 rounded-2xl text-center">
+                    <img src="W2E.jpg" alt="Artist 1" class="mx-auto mb-4 rounded-full">
+                    <h3 class="text-xl font-semibold">Wave To Earth</h3>
+                    <p class="text-blue-600">Pop Rock</p>
+                </div>
+                <div class="bg-white p-6 rounded-2xl text-center">
+                    <img src="NK.jpg" alt="Artist 2" class="mx-auto mb-4 rounded-full">
+                    <h3 class="text-xl font-semibold">NIKI</h3>
+                    <p class="text-blue-600">Electronic</p>
+                </div>
+                <div class="bg-white p-6 rounded-2xl text-center">
+                    <img src="k.jpg" alt="Artist 3" class="mx-auto mb-4 rounded-full">
+                    <h3 class="text-xl font-semibold">Keshi</h3>
+                    <p class="text-blue-600">Jazz</p>
+                </div>
+                <div class="bg-white p-6 rounded-2xl text-center">
+                    <img src="bi.jpg" alt="Artist 4" class="mx-auto mb-4 rounded-full">
+                    <h3 class="text-xl font-semibold">Billie Eilish</h3>
+                    <p class="text-blue-600">Classical</p>
+                </div>
+                <div class="bg-white p-6 rounded-2xl text-center">
+                    <img src="mar5.jpg" alt="Artist 4" class="mx-auto mb-4 rounded-full">
+                    <h3 class="text-xl font-semibold">Maroon 5</h3>
+                    <p class="text-blue-600">Classical</p>
+                </div>
+                <div class="bg-white p-6 rounded-2xl text-center">
+                    <img src="ND.jpg" alt="Artist 4" class="mx-auto mb-4 rounded-full">
+                    <h3 class="text-xl font-semibold">Neck Deep</h3>
+                    <p class="text-blue-600">Classical</p>
+                </div>
+                <div class="bg-white p-6 rounded-2xl text-center">
+                    <img src="TL.jpg" alt="Artist 4" class="mx-auto mb-4 rounded-full">
+                    <h3 class="text-xl font-semibold">Tulus</h3>
+                    <p class="text-blue-600">Classical</p>
+                </div>
+                <div class="bg-white p-6 rounded-2xl text-center">
+                    <img src="VR.jpg" alt="Artist 4" class="mx-auto mb-4 rounded-full">
+                    <h3 class="text-xl font-semibold">Vierratale</h3>
+                    <p class="text-blue-600">Classical</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Rundown Section -->
+    <section id="rundown" class="py-20 bg-white/50">
+        <div class="container mx-auto">
+            <h2 class="text-4xl text-center font-bold text-blue-900 mb-12">Jadwal Acara</h2>
+            <div class="bg-white p-8 rounded-2xl">
+                <div class="grid grid-cols-2 gap-6">
+                    <div>
+                        <h3 class="text-2xl font-semibold mb-6">Day 1</h3>
+                        <ul class="space-y-4">
+                            <li class="flex justify-between">
+                                <span>13:00 - 14:30</span>
+                                <span>Wave To Earth</span>
+                            </li>
+                            <li class="flex justify-between">
+                                <span>15:00 - 16:30</span>
+                                <span>NIKI</span>
+                            </li>
+                            <li class="flex justify-between">
+                                <span>17:00 - 18:30</span>
+                                <span>Vierratale</span>
+                            </li>
+                            <li class="flex justify-between">
+                                <span>17:00 - 18:30</span>
+                                <span>Keshi</span>
+                            </li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h3 class="text-2xl font-semibold mb-6">Day 2</h3>
+                        <ul class="space-y-4">
+                            <li class="flex justify-between">
+                                <span>14:00 - 15:30</span>
+                                <span>Billie Eilish</span>
+                            </li>
+                            <li class="flex justify-between">
+                                <span>16:00 - 17:30</span>
+                                <span>Maroon 5</span>
+                            </li>
+                            <li class="flex justify-between">
+                                <span>18:00 - 19:30</span>
+                                <span>Tulus</span>
+                            </li>
+                            <li class="flex justify-between">
+                                <span>18:00 - 19:30</span>
+                                <span>Neck Deep</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+   <!-- Location Section -->
+   <section id="location" class="py-20">
+    <div class="container mx-auto">
+        <h2 class="text-4xl text-center font-bold text-blue-900 mb-12">Lokasi</h2>
+        <div class="bg-white p-8 rounded-2xl flex items-center">
+            <div class="w-1/2">
+                <h3 class="text-2xl font-semibold mb-4">Gelora Bung Karno Main Stadium</h3>
+                <p class="mb-4">Jl. Pintu Satu Senayan,<br> 
+                    Gelora,Kecamatan Tanah Abang, Kota Jakarta Pusat,<br>
+                     Daerah Khusus Ibukota Jakarta 10270</p>
+                <div class="flex space-x-4">
+                    <i class="fas fa-map-marker-alt text-blue-600 text-2xl"></i>
+                    <i class="fas fa-car text-blue-600 text-2xl"></i>
+                    <i class="fas fa-bus text-blue-600 text-2xl"></i>
+                </div>
+            </div>
+                <div class="w-1/2">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d15865.365076993963!2d106.8017727!3d-6.2186488!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69f14d30079f01%3A0x2e74f2341fff266d!2sGelora%20Bung%20Karno%20Main%20Stadium!5e0!3m2!1sen!2sid!4v1733293620624!5m2!1sen!2sid" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- About Section -->
+    <section id="about" class="py-20 bg-white/50">
+        <div class="container mx-auto">
+            <h2 class="text-4xl text-center font-bold text-blue-900 mb-12">Tentang Festival</h2>
+            <div class="bg-white p-8 rounded-2xl text-center">
+                <p class="text-xl text-blue-800 max-w-3xl mx-auto">
+                    Winter Music Festival adalah acara musik tahunan yang menampilkan beragam genre musik dari seniman lokal dan internasional. 
+                    Kami berkomitmen untuk menciptakan pengalaman musik yang tak terlupakan di tengah suasana musim dingin yang memesona.
+                </p>
+            </div>
+        </div>
+    </section>
+    <!-- Gallery Section -->
+    <section id="gallery" class="py-20">
+        <div class="container mx-auto">
+            <h2 class="text-4xl text-center font-bold text-blue-900 mb-12">Galeri</h2>
+            <div class="kontener">
+                <img src="a.jpg" alt="Galeri 1">
+                <img src="b.jpg" alt="Galeri 2">
+                <img src="c.jpg" alt="Galeri 3">
+                <img src="d.jpg" alt="Galeri 4">
+                <img src="e.jpg" alt="Galeri 5">
+                <img src="f.jpg" alt="Galeri 6">
+                <img src="g.jpg" alt="Galeri 7">
+                <img src="h.jpg" alt="Galeri 8">
+            </div>
+        </div>
+    </section>
+    <!-- Footer -->
+    <footer class="bg-blue-900 text-white py-8">
+        <div class="container mx-auto text-center">
+            <p>&copy; 2024 Winter Music Festival. All Rights Reserved.</p>
+            <div class="mt-4 space-x-4">
+                <a href="#" class="hover:text-blue-300"><i class="fab fa-facebook"></i></a>
+                <a href="#" class="hover:text-blue-300"><i class="fab fa-instagram"></i></a>
+                <a href="#" class="hover:text-blue-300"><i class="fab fa-twitter"></i></a>
+            </div>
+        </div>
+    </footer>
+    <script>
+        // Animasi snowflake
+        function createSnowflake() {
+            const snowflake = document.createElement('div');
+            snowflake.classList.add('snowflake');
+            snowflake.style.left = `${Math.random() * 100}%`;
+            snowflake.style.animationDuration = `${Math.random() * 10 + 5}s`;
+            document.body.appendChild(snowflake);
+            
+            setTimeout(() => {
+                snowflake.remove();
+            }, 15000);
+        }
+        // Membuat beberapa snowflake setiap detik
+        setInterval(createSnowflake, 300);
+        // Ambil daftar konser
+        fetch('http://localhost:5000/konser')
+            .then(response => response.json())
+            .then(konser => {
+                const daftarKonser = document.getElementById('daftar-konser');
+                konser.forEach(k => {
+                    const kartuKonser = document.createElement('div');
+                    kartuKonser.className = 'bg-white p-6 rounded-2xl text-center shadow-md';
+                    kartuKonser.innerHTML = `
+                        <h3 class="text-2xl font-semibold text-blue-900 mb-3">${k.nama}</h3>
+                        <p class="text-blue-700 mb-2">🗓️ ${new Date(k.tanggal).toLocaleDateString()}</p>
+                        <p class="text-blue-800 mb-2">💰 Rp ${k.harga.toLocaleString()}</p>
+                        <p class="text-blue-600 mb-4">🎟️ Tiket Tersedia: ${k.tiket_tersedia}</p>
+                        <button onclick="bukaModal(${k.id}, '${k.nama}', ${k.harga})" 
+                                class="w-full bg-blue-500 text-white px-6 py-3 rounded-lg hover:bg-blue-600 transition-colors">
+                            Beli Tiket
+                        </button>
+                    `;
+                    daftarKonser.appendChild(kartuKonser);
+                });
+            });
+        // Modal Pembelian Tiket (akan ditambahkan sesuai kebutuhan)
+        function bukaModal(id, nama, harga) {
+            // Implementasi modal pembelian tiket
+            alert(`Anda akan membeli tiket ${nama}`);
+        }
+let slideIndex = 0;
+showSlides();
+function showSlides() {
+  let i;
+  let slides = document.getElementsByClassName("mySlides");
+  let dots = document.getElementsByClassName("dot");
+  for (i = 0; i < slides.length; i++) {
+    slides[i].style.display = "none";  
+  }
+  slideIndex++;
+  if (slideIndex > slides.length) {slideIndex = 1}    
+  for (i = 0; i < dots.length; i++) {
+    dots[i].className = dots[i].className.replace(" active", "");
+  }
+  slides[slideIndex-1].style.display = "block";  
+  dots[slideIndex-1].className += " active";
+  setTimeout(showSlides, 3000); // Change image every 2 seconds
+}
+    </script>
+</body>
+</html>
